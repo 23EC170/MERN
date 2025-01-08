@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API Example</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Heading styling */
+        h1 {
+            text-align: center;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        /* Grid container styling */
+        .grid-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 20px;
+        }
+
+        /* Grid item styling */
+        .grid-item {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Loader styling */
+        .loader {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Posts from JSONPlaceholder API</h1>
+    <div id="loader" class="loader">Loading posts...</div>
+    <div class="grid-container" id="postGrid"></div>
+
+    <script>
+        // JavaScript for fetching data from the API
+        const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+        // Reference to grid container and loader
+        const postGrid = document.getElementById('postGrid');
+        const loader = document.getElementById('loader');
+
+        // Function to fetch posts from API
+        async function fetchPosts() {
+            try {
+                const response = await fetch(API_URL);
+                const posts = await response.json();
+                displayPosts(posts);
+            } catch (error) {
+                loader.textContent = 'Failed to load posts. Please try again.';
+                console.error('Error fetching posts:', error);
+            }
+        }
+
+        // Function to display posts in the grid
+        function displayPosts(posts) {
+            loader.style.display = 'none'; // Hide loader
+            posts.slice(0, 12).forEach(post => { // Display only the first 12 posts
+                const postItem = document.createElement('div');
+                postItem.className = 'grid-item';
+                postItem.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p>${post.body}</p>
+                `;
+                postGrid.appendChild(postItem);
+            });
+        }
+
+        // Call fetchPosts on page load
+        fetchPosts();
+    </script>
+</body>
+</html>

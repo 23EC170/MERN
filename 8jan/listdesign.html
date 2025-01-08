@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled List Design</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container styling */
+        .list-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h1, h2 {
+            text-align: center;
+            color: #555;
+        }
+
+        /* List styling */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        /* List item styling */
+        .styled-list li {
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Hover effect on list items */
+        .styled-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <h1>Beautiful List Design</h1>
+        <h2>Ordered List</h2>
+        <ol class="styled-list">
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li>Fourth item</li>
+        </ol>
+
+        <h2>Unordered List</h2>
+        <ul class="styled-list">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+</body>
+</html>

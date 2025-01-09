@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      background-color: #007bff;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    button:active {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Event Handling Example</h1>
+    <div class="box" id="box"></div>
+    <button id="clickButton">Click Me</button>
+    <button id="doubleClickButton">Double Click Me</button>
+  </div>
+
+  <script>
+    const box = document.getElementById('box');
+    const clickButton = document.getElementById('clickButton');
+    const doubleClickButton = document.getElementById('doubleClickButton');
+
+    // Click event: Change box color
+    clickButton.addEventListener('click', () => {
+      box.style.backgroundColor = 'orange';
+    });
+
+    // Double-click event: Rotate the box
+    doubleClickButton.addEventListener('dblclick', () => {
+      box.style.transform = 'rotate(45deg)';
+    });
+
+    // Mouseover event: Expand the box
+    box.addEventListener('mouseover', () => {
+      box.style.transform = 'scale(1.2)';
+    });
+
+    // Mouseout event: Reset the box size
+    box.addEventListener('mouseout', () => {
+      box.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>

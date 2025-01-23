@@ -1,0 +1,498 @@
+body {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #206239;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #055922;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0 20px;
+    animation: slideInUp 1s ease-out;
+}
+
+.logo {
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s linear;
+}
+
+.links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #077b32;
+    transition: width 0.2s linear;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+.links a:hover {
+    color: #077b32;
+}
+
+/* Main Section */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-container .image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #077b32, 0 0 50px #077b32;
+    
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: slideInLeft 1s ease-out;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.main-container .content {
+    color: white;
+    width: 50%;
+    animation: slideInRight 1s ease-out;
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.main-container .content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.main-container .content h1 span {
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.main-container .content p {
+    font-size: clamp(0.8rem, 1rem, 1.2rem);
+    margin: 10px 0;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #077b32;
+    border-radius: 50%;
+    color: #077b32;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: white;
+    background-color: #077b32;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #077b32;
+}
+
+button {
+    margin: 30px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #077b32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #077b32;
+    border: 2px solid #077b32;
+    box-shadow: 0 0 10px #077b32;
+    transform: scale(1.1);
+}
+
+/* About Section */
+#about {
+    padding: 40px;
+    background-color: #1a1a1a;
+    color: white;
+    animation: slideInRight 1s ease-out;
+}
+
+/* Skills Section */
+#skills {
+    background-color:black;
+    background-size: cover;
+    color: white;
+    padding: 40px;
+}
+
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 250px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    color:white;
+    font-size: 1.2rem;
+}
+
+.skill p {
+    font-size: 1rem;
+    color:white;
+}
+
+.progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    margin-left: 75px;
+}
+
+.circle-bg, .circle-fg {
+    fill: none;
+    stroke-width: 8;
+}
+
+.circle-bg {
+    stroke: #ddd;
+}
+
+.circle-fg {
+    stroke: #077b32;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.percentage {
+    font-size: 1.5rem;
+    font-weight: bold;
+    fill:white;
+}
+
+.skill .circle-fg {
+    stroke-dashoffset: 0;
+}
+
+
+
+
+/* Contact Section */
+.contact {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact .title {
+    font-size: 2rem;
+    color: #077b32;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #077b32;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #077b32;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #077b32;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #055922;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #077b32;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: #077b32;
+    box-shadow: 0 0 10px #077b32;
+}
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: #077b32;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.projects {
+    background: url('mp image.jpeg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.projects .title {
+    font-size: 2rem;
+    color: #077b32;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.projects .project-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #2b2b2b;
+    border: 1px solid #077b32;
+    border-radius: 8px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 0 10px #077b32;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #077b32;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #077b32;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #077b32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+.project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* Gives the illusion of depth */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg); /* Flip on hover */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back when facing away */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #077b32;
+}
+
+.card-front {
+    background-color: #555;
+}
+
+.card-back {
+    background-color: #077b32;
+    transform: rotateY(180deg); /* Initially rotated to the back */
+    color: white;
+}
+
+.card-back a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #077b32;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.card-back a:hover {
+    background-color: #077b32;
+    color: white;
+    box-shadow: 0 0 10px #077b32;
+    transform: scale(1.1);
+}
+
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animate-progress {
+    0% {
+        stroke-dashoffset: 339.292;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+.progress-circle svg .circle-fg {
+    animation: animate-progress 2s ease-out forwards;
+}
